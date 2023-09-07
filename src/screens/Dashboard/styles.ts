@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 import { Feather } from "@expo/vector-icons";
 import { TextInput, FlatList } from "react-native";
-import { RepositoryProps } from "../../hooks/useRepositories";
+import { RepositoryProps } from "../../contexts/RepositoriesProvider";
 
 export const Container = styled.View`
   flex: 1;
