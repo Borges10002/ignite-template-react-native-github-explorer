@@ -1,7 +1,7 @@
-import styled from 'styled-components/native';
-import { Feather} from '@expo/vector-icons'
-import { TextInput, FlatList, FlatListProps } from 'react-native';
-import { RepositoryProps } from '../../contexts/RepositoriesProvider';
+import styled from "styled-components/native";
+import { Feather } from "@expo/vector-icons";
+import { TextInput, FlatList } from "react-native";
+import { RepositoryProps } from "../../hooks/useRepositories";
 
 export const Container = styled.View`
   flex: 1;
@@ -28,7 +28,7 @@ export const Input = styled.View`
 `;
 
 export const InputField = styled(TextInput).attrs(({ theme }) => ({
-  placeholderTextColor: theme.colors.gray_400
+  placeholderTextColor: theme.colors.gray_400,
 }))`
   flex: 1;
   padding: 0 12px;
@@ -38,11 +38,11 @@ export const InputField = styled(TextInput).attrs(({ theme }) => ({
 `;
 
 export const InputButton = styled.TouchableOpacity.attrs({
-  activeOpacity: 0.7
+  activeOpacity: 0.7,
 })`
   background-color: ${({ theme }) => theme.colors.green_200};
   padding: 16px;
-  opacity: ${({ disabled }) => disabled ? 0.5 : 1};
+  opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
 
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -53,7 +53,7 @@ export const Icon = styled(Feather)`
 `;
 
 export const RepositoriesList = styled(
-  FlatList as new (props: FlatListProps<RepositoryProps>) => FlatList<RepositoryProps>
+  FlatList as new () => FlatList<RepositoryProps>
 )`
   margin-top: 64px;
 `;
